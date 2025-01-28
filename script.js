@@ -57,11 +57,22 @@ async function consultarCNPJ() {
             }
 
             document.getElementById("resultado").innerHTML = html;
+            document.getElementById("resultado").style.display = "block"; // Mostrar resultado
+            document.getElementById("novaConsulta").style.display = "inline-block"; // Mostrar botão "Nova Consulta"
         } else {
             document.getElementById("resultado").innerHTML = "<p>CNPJ não encontrado ou inválido.</p>";
+            document.getElementById("resultado").style.display = "block";
         }
     } catch (error) {
         console.error("Erro ao buscar CNPJ:", error);
         document.getElementById("resultado").innerHTML = "<p>Erro ao buscar informações. Tente novamente.</p>";
+        document.getElementById("resultado").style.display = "block";
     }
+}
+
+// Função para limpar os dados e reiniciar a consulta
+function novaConsulta() {
+    document.getElementById("cnpj").value = ""; // Limpar campo de entrada
+    document.getElementById("resultado").style.display = "none"; // Ocultar resultado
+    document.getElementById("novaConsulta").style.display = "none"; // Ocultar botão "Nova Consulta"
 }
