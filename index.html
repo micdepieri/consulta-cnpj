@@ -10,16 +10,13 @@
             margin: 20px;
             text-align: center;
         }
-        input {
+        input, button {
             padding: 10px;
             font-size: 16px;
-            width: 300px;
-            margin-bottom: 10px;
+            margin: 5px;
         }
-        button {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
+        input {
+            width: 300px;
         }
         #resultado {
             margin-top: 20px;
@@ -31,12 +28,16 @@
             padding: 20px;
             border-radius: 10px;
             background-color: #f9f9f9;
+            display: none;
         }
-        h2, h3 {
-            color: #333;
-        }
-        hr {
-            border: 1px solid #ddd;
+        #novaConsulta {
+            display: none; /* Ocultar o botão inicialmente */
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -45,6 +46,7 @@
     <input type="text" id="cnpj" placeholder="Digite o CNPJ (somente números)">
     <button onclick="consultarCNPJ()">Consultar</button>
     <div id="resultado"></div>
+    <button id="novaConsulta" onclick="novaConsulta()">Nova Consulta</button>
 
     <script src="script.js"></script>
 </body>
